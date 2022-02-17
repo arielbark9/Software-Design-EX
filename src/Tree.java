@@ -12,7 +12,7 @@ public abstract class Tree implements Comparable, Seasonable {
     }
 
     protected void setHeight(float height) {
-        this.height = Math.round(height);
+        this.height = (int)height;
     }
 
     @Override

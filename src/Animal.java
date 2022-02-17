@@ -12,7 +12,7 @@ public abstract class Animal implements Seasonable,Comparable{
     }
 
     protected void setWeight(float weight) {
-        this.weight = Math.round(weight);
+        this.weight = (int)weight;
     }
 
     @Override

@@ -1,17 +1,41 @@
 public class OliveTree extends Tree {
 
-
+    private boolean gives_fruit;
     OliveTree(int height, Season season) {
-        super(height,season,null);
+        super(height,season,Color.GREEN);
+        gives_fruit = season == Season.SUMMER;
     }
 
     @Override
     public String toString() {
-        // TODO: Implement.
-        return null;
+        if (this.gives_fruit)
+            return String.format("Olive tree. I give fruit. My height is: %d 197 and my color is: %s",
+                    this.height, this.leavesColor);
+        else
+        if (leavesColor == null)
+            return String.format("Olive tree. My height is: %d 197 and i have no leaves",
+                    this.height);
+        else
+            return String.format("Olive tree. My height is: %d 197 and my color is: %s",
+                    this.height, this.leavesColor);
     }
     @Override
     public void changeSeason() {
-        // TODO: Implement.
+        super.changeSeason();
+
+        switch (season){
+            case WINTER, FALL ->{
+                this.height = this.height + 5;
+                gives_fruit = false;
+            }
+            case SPRING ->{
+                this.height = this.height + 10;
+                gives_fruit = false;
+            }
+            case SUMMER ->{
+                this.height = this.height + 10;
+                gives_fruit = true;
+            }
+        }
     }
 }

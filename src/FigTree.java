@@ -1,19 +1,67 @@
 public class FigTree extends Tree {
-
+    private boolean gives_fruit;
 
     FigTree(int height, Season season) {
         // TODO: Implement.
-        super(height,season,null);
+        super(height, season, null);
+        switch (season) {
+            case WINTER -> {
+                leavesColor = null;
+                gives_fruit = false;
+            }
+            case SPRING -> {
+                leavesColor = Color.GREEN;
+                gives_fruit = false;
+            }
+            case SUMMER -> {
+                leavesColor = Color.GREEN;
+                gives_fruit = true;
+            }
+            case FALL -> {
+                leavesColor = Color.YELLOW;
+                gives_fruit = false;
+            }
+        }
     }
 
     @Override
     public String toString() {
-        // TODO: Implement.
-        return null;
+        if (this.gives_fruit)
+            return String.format("Fig tree. I give fruit. My height is: %d 197 and my color is: %s",
+                this.height, this.leavesColor);
+        else
+            if (leavesColor == null)
+                return String.format("Fig tree. My height is: %d 197 and i have no leaves",
+                        this.height);
+            else
+                return String.format("Fig tree. My height is: %d 197 and my color is: %s",
+                        this.height, this.leavesColor);
+
     }
     @Override
     public void changeSeason() {
-        // TODO: Implement.
+        super.changeSeason();
+
+        switch (season){
+            case WINTER ->{
+            this.height = this.height + 20;
+            leavesColor = null;
+            }
+            case SPRING ->{
+                this.height = this.height + 30;
+                leavesColor = Color.GREEN;
+            }
+            case SUMMER ->{
+                this.height = this.height + 30;
+                gives_fruit = Boolean.TRUE;
+            }
+            case FALL ->{
+                this.height = this.height + 20;
+                leavesColor = Color.YELLOW;
+                gives_fruit = false;
+            }
+        }
+
     }
     //
 }

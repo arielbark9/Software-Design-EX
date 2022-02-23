@@ -1,7 +1,7 @@
 public class FigTree extends Tree {
     private boolean gives_fruit;
 
-    FigTree(int height, Season season) {
+    FigTree(float height, Season season) {
         super(height, season, null);
         switch (season) {
             case WINTER -> {
@@ -38,6 +38,7 @@ public class FigTree extends Tree {
         }
 
     }
+
     @Override
     public void changeSeason() {
         super.changeSeason();
@@ -61,7 +62,5 @@ public class FigTree extends Tree {
                 gives_fruit = false;
             }
         }
-
     }
-    //
 }

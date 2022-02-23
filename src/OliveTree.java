@@ -2,7 +2,7 @@ public class OliveTree extends Tree {
 
     private boolean gives_fruit;
 
-    OliveTree(int height, Season season) {
+    OliveTree(float height, Season season) {
         super(height,season,Color.GREEN);
         gives_fruit = season == Season.SUMMER;
     }

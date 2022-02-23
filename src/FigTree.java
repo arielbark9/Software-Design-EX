@@ -43,24 +43,24 @@ public class FigTree extends Tree {
     public void changeSeason() {
         super.changeSeason();
 
-        switch (season){
-            case WINTER ->{
-            this.height = this.height + 20;
-            leavesColor = null;
-            }
-            case SPRING ->{
+        switch (season) {
+            case WINTER:
+                this.height = this.height + 20;
+                leavesColor = null;
+                break;
+            case SPRING:
                 this.height = this.height + 30;
                 leavesColor = Color.GREEN;
-            }
-            case SUMMER ->{
+                break;
+            case SUMMER:
                 this.height = this.height + 30;
                 gives_fruit = Boolean.TRUE;
-            }
-            case FALL ->{
+                break;
+            case FALL:
                 this.height = this.height + 20;
                 leavesColor = Color.YELLOW;
                 gives_fruit = false;
-            }
+                break;
         }
     }
 }

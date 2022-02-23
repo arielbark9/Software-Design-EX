@@ -26,19 +26,20 @@ public class OliveTree extends Tree {
     public void changeSeason() {
         super.changeSeason();
 
-        switch (season){
-            case SPRING, SUMMER ->{
+        switch (season) {
+            case SPRING:
+            case SUMMER:
                 this.height = this.height + 10;
                 givesFruit = false;
-            }
-            case WINTER ->{
+                break;
+            case WINTER:
                 this.height = this.height + 5;
                 givesFruit = false;
-            }
-            case FALL ->{
+                break;
+            case FALL:
                 this.height = this.height + 5;
                 givesFruit = true;
-            }
+                break;
         }
     }
 }

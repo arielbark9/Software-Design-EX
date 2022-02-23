@@ -33,20 +33,22 @@ public class Caribou extends Animal {
     public void changeSeason() {
         super.changeSeason();
         switch (this.getCurrentSeason()) {
-            case WINTER -> {
+            case WINTER:
                 this.color = Color.WHITE;
                 this.migrating = true;
                 this.migratingTo = "south";
-            }
-            case SPRING -> {
+                break;
+            case SPRING:
                 this.color = Color.BROWN;
                 migrating = false;
-            }
-            case SUMMER -> {
+                break;
+            case SUMMER:
                 this.migrating = true;
                 this.migratingTo = "north";
-            }
-            case FALL -> this.migrating = false;
+                break;
+            case FALL:
+                this.migrating = false;
+                break;
         }
     }
 }

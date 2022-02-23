@@ -22,11 +22,19 @@ public abstract class Animal implements Seasonable,Comparable{
 
     @Override
     public void changeSeason() {
-        switch (season){
-            case FALL -> season = Season.WINTER;
-            case WINTER -> season = Season.SPRING;
-            case SPRING -> season = Season.SUMMER;
-            case SUMMER -> season = Season.FALL;
+        switch (season) {
+            case FALL:
+                season = Season.WINTER;
+                break;
+            case WINTER:
+                season = Season.SPRING;
+                break;
+            case SPRING:
+                season = Season.SUMMER;
+                break;
+            case SUMMER:
+                season = Season.FALL;
+                break;
         }
     }
 

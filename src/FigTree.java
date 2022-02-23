@@ -4,22 +4,22 @@ public class FigTree extends Tree {
     FigTree(float height, Season season) {
         super(height, season, null);
         switch (season) {
-            case WINTER -> {
+            case WINTER:
                 leavesColor = null;
                 gives_fruit = false;
-            }
-            case SPRING -> {
+                break;
+            case SPRING:
                 leavesColor = Color.GREEN;
                 gives_fruit = false;
-            }
-            case SUMMER -> {
+                break;
+            case SUMMER:
                 leavesColor = Color.GREEN;
                 gives_fruit = true;
-            }
-            case FALL -> {
+                break;
+            case FALL:
                 leavesColor = Color.YELLOW;
                 gives_fruit = false;
-            }
+                break;
         }
     }
 

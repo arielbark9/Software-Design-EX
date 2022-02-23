@@ -2,7 +2,6 @@ public class FigTree extends Tree {
     private boolean gives_fruit;
 
     FigTree(int height, Season season) {
-        // TODO: Implement.
         super(height, season, null);
         switch (season) {
             case WINTER -> {
@@ -27,14 +26,14 @@ public class FigTree extends Tree {
     @Override
     public String toString() {
         if (this.gives_fruit)
-            return String.format("Fig tree. I give fruit. My height is: %d 197 and my color is: %s",
+            return String.format("Fig tree. I give fruit. My height is: %d and my color is: %s",
                 this.height, this.leavesColor);
         else
-            if (leavesColor == null)
-                return String.format("Fig tree. My height is: %d 197 and i have no leaves",
+            if (this.leavesColor == null)
+                return String.format("Fig tree. My height is: %d and i have no leaves",
                         this.height);
             else
-                return String.format("Fig tree. My height is: %d 197 and my color is: %s",
+                return String.format("Fig tree. My height is: %d and my color is: %s",
                         this.height, this.leavesColor);
 
     }

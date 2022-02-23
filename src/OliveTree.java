@@ -1,15 +1,15 @@
 public class OliveTree extends Tree {
 
-    private boolean gives_fruit;
+    private boolean givesFruit;
 
     OliveTree(float height, Season season) {
         super(height,season,Color.GREEN);
-        gives_fruit = season == Season.SUMMER;
+        givesFruit = season == Season.FALL;
     }
 
     @Override
     public String toString() {
-        if (this.gives_fruit)
+        if (this.givesFruit)
             return String.format("Olive tree. I give fruit. My height is: %d and my color is: %s",
                     this.height, this.leavesColor);
         else {
@@ -27,17 +27,17 @@ public class OliveTree extends Tree {
         super.changeSeason();
 
         switch (season){
-            case WINTER, FALL ->{
+            case SPRING, SUMMER ->{
+                this.height = this.height + 10;
+                givesFruit = false;
+            }
+            case WINTER ->{
                 this.height = this.height + 5;
-                gives_fruit = false;
+                givesFruit = false;
             }
-            case SPRING ->{
-                this.height = this.height + 10;
-                gives_fruit = false;
-            }
-            case SUMMER ->{
-                this.height = this.height + 10;
-                gives_fruit = true;
+            case FALL ->{
+                this.height = this.height + 5;
+                givesFruit = true;
             }
         }
     }

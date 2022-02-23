@@ -4,7 +4,7 @@ public class Bear extends Animal {
 
     Bear(float weight, Season season) {
         super(weight,season,Color.BROWN);
-        sleeping = getCurrentSeason() != Season.WINTER;
+        sleeping = this.getCurrentSeason() == Season.WINTER;
     }
 
     @Override

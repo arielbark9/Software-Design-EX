@@ -37,7 +37,7 @@ public abstract class Tree implements Comparable, Seasonable {
         try {
             tree = (Tree)o;
         }
-        catch (IllegalFormatConversionException ex) {
+        catch (ClassCastException ex) {
             throw ex;
         }
         return this.height - tree.height;

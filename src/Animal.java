@@ -37,7 +37,7 @@ public abstract class Animal implements Seasonable,Comparable{
         try {
            animal = (Animal)o;
         }
-        catch (IllegalFormatConversionException ex) {
+        catch (ClassCastException ex) {
             throw ex;
         }
         return this.weight - animal.weight;

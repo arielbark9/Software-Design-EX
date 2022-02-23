@@ -30,7 +30,7 @@ public class FigTree extends Tree {
                 this.height, this.leavesColor);
         else {
             if (this.leavesColor == null)
-                return String.format("Fig tree. My height is: %d and i have no leaves",
+                return String.format("Fig tree. My height is: %d and I have no leaves",
                         this.height);
             else
                 return String.format("Fig tree. My height is: %d and my color is: %s",

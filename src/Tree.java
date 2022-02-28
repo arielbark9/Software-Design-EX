@@ -1,7 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
-import java.util.IllegalFormatConversionException;
-
 public abstract class Tree implements Comparable, Seasonable {
     protected int height;
     protected Season season;
@@ -28,7 +24,8 @@ public abstract class Tree implements Comparable, Seasonable {
     }
 
     @Override
-    public int compareTo(@NotNull Object o) {
+    public int compareTo(Object o) {
+        if (o == null) throw new NullPointerException("Error! Can't compare null value.");
         Tree tree;
         try {
             tree = (Tree)o;

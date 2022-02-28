@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.IllegalFormatConversionException;
 
 public abstract class Animal implements Seasonable,Comparable{
@@ -22,25 +24,11 @@ public abstract class Animal implements Seasonable,Comparable{
 
     @Override
     public void changeSeason() {
-        switch (season) {
-            case FALL:
-                season = Season.WINTER;
-                break;
-            case WINTER:
-                season = Season.SPRING;
-                break;
-            case SPRING:
-                season = Season.SUMMER;
-                break;
-            case SUMMER:
-                season = Season.FALL;
-                break;
-        }
+        season = season.next();
     }
 
     @Override
-    public int compareTo(Object o) {
-        if (o == null) throw new NullPointerException("Error! Can't compare null value.");
+    public int compareTo(@NotNull Object o) {
         Animal animal;
         try {
            animal = (Animal)o;
@@ -48,6 +36,7 @@ public abstract class Animal implements Seasonable,Comparable{
         catch (ClassCastException ex) {
             throw ex;
         }
+        // Compare with weight
         return this.weight - animal.weight;
     }
 }

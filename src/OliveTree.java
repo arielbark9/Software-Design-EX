@@ -25,18 +25,17 @@ public class OliveTree extends Tree {
     @Override
     public void changeSeason() {
         super.changeSeason();
-
         switch (season) {
             case SPRING:
-            case SUMMER:
+            case SUMMER: // Tree grows by 10
                 this.height = this.height + 10;
                 givesFruit = false;
                 break;
-            case WINTER:
+            case WINTER: // Tree grows by 5
                 this.height = this.height + 5;
                 givesFruit = false;
                 break;
-            case FALL:
+            case FALL: // Tree grows by 5 and gives fruit
                 this.height = this.height + 5;
                 givesFruit = true;
                 break;

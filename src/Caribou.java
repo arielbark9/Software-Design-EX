@@ -1,6 +1,14 @@
 public class Caribou extends Animal {
 
+    /**
+     * Flag to tell if the caribou is migrating
+     */
     private boolean migrating;
+
+    /**
+     * If the Caribou is migrating, where is it migrating to.
+     * possible values: north, south.
+     */
     private String migratingTo;
 
     Caribou(float weight, Season season) {
@@ -33,7 +41,7 @@ public class Caribou extends Animal {
     public void changeSeason() {
         super.changeSeason();
         switch (this.getCurrentSeason()) {
-            case WINTER:
+            case WINTER: // Caribou migrates south
                 this.color = Color.WHITE;
                 this.migrating = true;
                 this.migratingTo = "south";
@@ -42,7 +50,7 @@ public class Caribou extends Animal {
                 this.color = Color.BROWN;
                 migrating = false;
                 break;
-            case SUMMER:
+            case SUMMER: // Caribou migrates north
                 this.migrating = true;
                 this.migratingTo = "north";
                 break;

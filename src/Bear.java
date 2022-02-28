@@ -1,5 +1,8 @@
 public class Bear extends Animal {
 
+    /**
+     * Flag to tell if the bear is sleeping (only in winter)
+     */
     private boolean sleeping;
 
     Bear(float weight, Season season) {
@@ -20,19 +23,19 @@ public class Bear extends Animal {
     public void changeSeason() {
         super.changeSeason();
         switch (this.getCurrentSeason()) {
-            case WINTER:
+            case WINTER: // 20% decrease in weight
                 this.setWeight(this.weight * (4f / 5));
                 this.sleeping = true;
                 break;
-            case SPRING:
+            case SPRING: // 25% decrease in weight
                 this.setWeight(this.weight * (3f / 4));
                 this.sleeping = false;
                 break;
-            case SUMMER:
+            case SUMMER: // 33% increase in weight
                 this.setWeight(this.weight * (4f / 3));
                 this.sleeping = false;
                 break;
-            case FALL:
+            case FALL: // 25% increase in weight
                 this.setWeight(this.weight * (5f / 4));
                 this.sleeping = false;
                 break;

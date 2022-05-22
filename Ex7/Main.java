@@ -72,10 +72,11 @@ public class Main {
                 "sp: spicy\n" +
                 "la: lamb\n" +
                 "hm: homemade");
-        // TODO: Add a Hamburger Factory and use it to create a Hamburger
-        Hamburger hamburger = null;
-
         String choice="";
+        choice = scanner.nextLine();
+        Hamburger hamburger = HamburgerFactory.createHamburger(choice);
+
+        choice = "";
         while (!choice.equals("s")) {
             System.out.println("Choose from the following options:\n" +
                     "a: add topping\n" +
@@ -86,19 +87,33 @@ public class Main {
             }
             if (choice.equals("s")) {
                 System.out.println(hamburger.serve());
-
             }
         }
-
-
     }
+
     public static Hamburger toppingMenu(Scanner scanner, Hamburger hamburger){
+        // factory method
         System.out.println("Choose from the following toppings:\n" +
                 "ch: chips\n" +
                 "or: onion rings\n" +
                 "sa: salad\n" +
-                "fe: friedEgg");
-        // TODO: Add a Hamburger-Topping Factory and use it to create a decorated Hamburger
-        return null;
+                "fe: fried egg");
+        String choice = "";
+        choice = scanner.nextLine();
+        switch (choice){
+            case "ch":
+                hamburger = new ChipsDecorator(hamburger);
+                break;
+            case "or":
+                hamburger = new OnionRingsDecorator(hamburger);
+                break;
+            case "sa":
+                hamburger = new SaladDecorator(hamburger);
+                break;
+            case "fe":
+                hamburger = new FriedEggDecorator(hamburger);
+                break;
+        }
+        return hamburger;
     }
 }

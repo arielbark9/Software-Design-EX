@@ -5,7 +5,7 @@ public class FileDetailsFactory {
     public static void main(String[] args) {
         FileDetails details = FileDetailsFactory.getFileDetails("web/backup.mp3 length in seconds: 354, 7901 bytes");
     }
-    private final static String EXTENTION_CAPTURE_PATTERN = "^[^ .]*(\\.[^ ]*)?";
+    private final static String EXTENSION_CAPTURE_PATTERN = "^[^ .]*(\\.[^ ]*)?";
     private final static String MP3_CAPTURE_PATTERN = "(.*/)?([^ /]*) length in seconds: (\\d+), (\\d+) bytes";
     private final static String JPG_CAPTURE_PATTERN = "(.*/)?([^ /]*) (\\d+)x(\\d+), (\\d+) bytes";
     private final static String HTML_CAPTURE_PATTERN = "(.*/)?([^ /]*) lines: (\\d+), (\\d+) bytes";
@@ -51,8 +51,8 @@ public class FileDetailsFactory {
         throw new RuntimeException("wrong file type");
     }
     public static String getExtension(String fileDescription){
-        String extention = getMatcher(EXTENTION_CAPTURE_PATTERN,fileDescription).group(1);
-        return extention== null ? "" : extention.substring(1);
+        String extension = getMatcher(EXTENSION_CAPTURE_PATTERN,fileDescription).group(1);
+        return extension== null ? "" : extension.substring(1);
     }
     public static Matcher getMatcher(String regex, String toMatch){
         Pattern pattern = Pattern.compile(regex);

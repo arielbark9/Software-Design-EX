@@ -33,7 +33,7 @@ public class Main {
         return root;
     }
     public static void fileMenu(Scanner scanner) throws IOException {
-        String path="files.txt";
+        String path="C:\\Users\\ariel\\IdeaProjects\\Software-Design-EX\\Ex7\\files.txt";
         FileDetails root= readFileDetails(path);
         System.out.println("Choose from the following options:\n" +
                 "q: quit\n" +
@@ -45,16 +45,23 @@ public class Main {
         while (!(myString = scanner.nextLine()).equals("q")){
             switch (myString){
                 case "c":
-                    //TODO: Add counting behavior
+                    FileCounterVisitor fileCounterVisitor = new FileCounterVisitor();
+                    root.accept(fileCounterVisitor);
+                    System.out.println("Found "+fileCounterVisitor.getFilesCount()+" files");
                     break;
                 case "sz":
-                    //TODO: Add size calculation behavior
+                    SizeCalcVisitor sizeCalcVisitor = new SizeCalcVisitor();
+                    root.accept(sizeCalcVisitor);
+                    System.out.println("the total size is "+sizeCalcVisitor.getSize()+" bytes");
                     break;
                 case "st":
-                    //TODO: Add statistics behavior
+                    StatisticsVisitor statisticsVisitor = new StatisticsVisitor();
+                    root.accept(statisticsVisitor);
                     break;
                 case "sh":
-                    //TODO: Add short representation behavior
+                    ShortRepVisitor shortRepVisitor = new ShortRepVisitor();
+                    root.accept(shortRepVisitor);
+                    break;
             }
         }
     }

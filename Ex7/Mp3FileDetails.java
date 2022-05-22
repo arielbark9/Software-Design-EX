@@ -14,4 +14,9 @@ public class Mp3FileDetails extends FileDetails {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 }
